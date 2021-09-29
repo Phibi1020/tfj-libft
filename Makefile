@@ -9,7 +9,6 @@ SRC		=	ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_itoa.c \
-		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcpy.c \
 		ft_memmove.c \
@@ -34,6 +33,7 @@ SRC		=	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_strtrim.c \
+		ft_striteri.c \
 
 OBJ		=	$(SRC:.c=.o)
 
