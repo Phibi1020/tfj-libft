@@ -7,13 +7,13 @@ char	*ft_strdup(const char *c)
 
 	dst = (char *)malloc(sizeof(c) * (ft_strlen(c) + 1));
 	if (!dst)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (c[i])
 	{
 		dst[i] = c[i];
 		i++;
 	}
-	dst[i] = 0;
+	dst[i] = '\0';
 	return (dst);
 }

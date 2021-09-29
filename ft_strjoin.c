@@ -7,21 +7,21 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		j;
 
 	str = (char *)malloc(sizeof(s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!(str))
+		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1[j])
+	while (s1[i] != '\0')
 	{
-		str[i] = s1[j];
+		str[i] = s1[i];
 		i++;
-		j++;
 	}
 	j = 0;
-	while (s2[j])
+	while (s2[j] != '\0')
 	{
-		str[i] = s2[j];
-		i++;
+		str[i + j] = s2[j];
 		j++;
 	}
-	str[i] = '\0';
+	str[i + j] = '\0';
 	return (str);
 }

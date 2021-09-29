@@ -1,57 +1,35 @@
 #include "libft.h"
 
-// https://github.com/hidaehyunlee/Libft/blob/master/ft_strtrim.c
-int	ft_getstart(const char *s1, const char *set)
+int	found(const char c, const char *set)
 {
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s1);
-	i = 0;
-	while (i < len)
+	while (*set)
 	{
-		if (!(strchr(set, s1[i])))
-			break ;
-		i++;
+		if (*set == c)
+			return (1);
+		set++;
 	}
-	return (i);
-}
-
-int	ft_getend(const char *s1, const char *set)
-{
-	size_t	len;
-
-	len = ft_strlen(s1);
-	while (len > 0)
-	{
-		if (!(strchr(set, s1[len])))
-			break ;
-		len--;
-	}
-	return (len);
+	return (0);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		start;
-	int		end;
+	int		len;
+	int		i;
 	char	*str;
 
-	if (s1 == NULL)
+	if (!s1)
 		return (NULL);
-	if (set == NULL)
-		str = strdup(s1);
-	start = ft_getstart(s1, set);
-	end = ft_getend(s1, set);
-	if (start >= end)
-	{
-		str = (char *)malloc(sizeof(s1) * (1));
-		ft_strlcpy(str, "", 1);
-	}
-	else
-	{
-		str = (char *)malloc(sizeof(s1) * (end - start + 1));
-		ft_strlcpy(str, s1 + start, end - start + 1);
-	}
+	start = 0;
+	while (s1[start] && found(s1[start], set))
+		start ++;
+	len = ft_strlen(s1);
+	while (len > start && found(s1[len - 1], set))
+		len --;
+	str = (char *)malloc(sizeof(*s1) * (len - start + 1));
+	i = 0;
+	while (start < len)
+		str[i++] = s1[start++];
+	str[i] = '\0';
 	return (str);
 }
