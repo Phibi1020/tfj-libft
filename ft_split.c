@@ -1,7 +1,5 @@
 #include "libft.h"
 
-// https://github.com/appinha/42cursus-00-Libft
-// /blob/master/libft/srcs/str/ft_split.c
 static int	get_wc(const char *s, int c)
 {
 	int	i;

@@ -1,7 +1,5 @@
 #include "libft.h"
 
-// referenced from https://git.42l.fr/frdescam/
-// libft/src/branch/master/ft_strnstr.c
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

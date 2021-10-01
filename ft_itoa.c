@@ -1,6 +1,5 @@
 #include "libft.h"
 
-// reference https://git.hexanyn.fr/42/cub3d/-/blob/master/linux/libft/ft_itoa.c
 static void	to_num(long n, char *str, int *i)
 {
 	if (n > 9)
