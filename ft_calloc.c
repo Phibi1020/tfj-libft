@@ -2,7 +2,7 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	char	*dst;
+	void	*dst;
 
 	dst = malloc(sizeof(num) * size);
 	if (!dst)
