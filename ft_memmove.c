@@ -6,7 +6,7 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:22:39 by ftan              #+#    #+#             */
-/*   Updated: 2021/10/03 01:05:12 by ftan             ###   ########.fr       */
+/*   Updated: 2021/10/03 01:10:54 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 
 void	*ft_memmove(void *dest, void *src, size_t n)
 {
-	char	*tmp;
+	int		i;
 
 	if (!dest && !src)
 		return (0);
-	tmp = (char *)malloc(sizeof(char) * n);
-	if (tmp == NULL)
-		return (NULL);
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	free(tmp);
+	if (src < dest)
+	{
+		i = (int)n - 1;
+		while (i >= 0)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i--;
+		}
+	}
+	else
+		ft_memcpy(dest, src, n);
 	return (dest);
 }
