@@ -1,7 +1,5 @@
 #include "libft.h"
 
-// referenced from http://git.innovationacademy.kr/
-// hyunwlee/Libft/src/branch/master/ft_strncmp.c?lang=en-US
 int	ft_strncmp(const char *str1, const char *str2, size_t len)
 {
 	size_t	i;
