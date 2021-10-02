@@ -6,7 +6,7 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:23:48 by ftan              #+#    #+#             */
-/*   Updated: 2021/10/02 20:23:49 by ftan             ###   ########.fr       */
+/*   Updated: 2021/10/03 01:08:33 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int	ft_atoi(const char *str)
 		sum = sum * 10 + str[i] - '0';
 		i++;
 	}
-	return (sign * sum);
+	return ((int)(sum * sign));
 }
