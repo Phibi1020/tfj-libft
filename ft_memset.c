@@ -6,7 +6,7 @@
 /*   By: ftan <ftan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:22:31 by ftan              #+#    #+#             */
-/*   Updated: 2021/10/02 23:38:05 by ftan             ###   ########.fr       */
+/*   Updated: 2021/10/02 23:52:45 by ftan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *str, int c, size_t n)
 {
 	size_t	iter;
 
-	if (!n)
-		return (0);
 	iter = 0;
 	while (iter < n)
 	{
